@@ -1,4 +1,4 @@
-#!/bin/bash
+ï»¿#!/bin/bash
 #
 # This starts and stops shairport
 #
@@ -19,7 +19,7 @@
 NAME=shairport
 DAEMON="/usr/local/bin/shairport.pl"
 PIDFILE=/var/run/$NAME.pid
-DAEMON_ARGS-w $PIDFILE -a AirPi3”
+DAEMON_ARGS="-w $PIDFILE -a AirPi3"
 
 [ -x $binary ] || exit 0
 
