@@ -5,10 +5,11 @@ echo "-------setting up audio"
 amixer cset numid=3 1
 
 echo "-------installing prereqs"
-apt-get -y install git python python-pip libao-dev libssl-dev libcrypt-openssl-rsa-perl libio-socket inet6-perl libwww-perl avahi-utils
+apt-get -y install git python libao-dev libssl-dev libcrypt-openssl-rsa-perl libio-socket inet6-perl libwww-perl avahi-utils
 apt-get -y install build-essential libssl-dev libcrypt-openssl-rsa-perl libao-dev libio-socket-inet6-perl libwww-perl avahi-utils pkg-config
 apt-get -y install subversion libjpeg8-dev imagemagick libav-tools
-
+echo "-------installing pip"
+apt-get -y install python-pip
 cd /home/pi
 echo "-------grabbing scripts"
 git clone https://github.com/whisperoftheshot/raspi_scripts
@@ -50,7 +51,7 @@ chmod 755 mybookmount.sh
 cp mybookmount.sh /etc/init.d
 cd /etc/init.d
 chmod 711 mybookmount.sh
-update-rc.d /etc/init.d/mybookmount.sh start 99 2
+update-rc.d mybookmount.sh start 99 2
 #
 echo "-------installing octoprint"
 cd /home/pi
@@ -62,7 +63,7 @@ chmod 755 octoprintstart.sh
 cp octoprintstart.sh /etc/init.d
 cd /etc/init.d
 chmod 711 octoprintstart.sh
-update-rc.d /etc/init.d/octoprintstart.sh start 99 2
+update-rc.d octoprintstart.sh start 99 2
 
 #echo "webcam stuff"
 #cd /home/pi

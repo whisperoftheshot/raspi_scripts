@@ -1,3 +1,3 @@
 #!/bin/bash
-cd /home/pi/Octoprint
+cd /home/pi/OctoPrint
 ./run --daemon start
